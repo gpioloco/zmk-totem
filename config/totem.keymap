@@ -23,6 +23,13 @@
 #define NAV  1
 #define SYM  2
 
+&mt {
+        flavor = "tap-preferred";
+        tapping-term-ms = <250>;
+        quick-tap-ms = <100>;
+        global-quick-tap;
+};
+
 / {
         keymap {
                 compatible = "zmk,keymap";
