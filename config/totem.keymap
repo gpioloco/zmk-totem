@@ -23,13 +23,6 @@
 #define NAV  1
 #define SYM  2
 
-&mt {
-        flavor = "tap-preferred";
-        tapping-term-ms = <1000>;
-        quick-tap-ms = <100>;
-        global-quick-tap;
-};
-
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -42,7 +35,7 @@ label= "BASE"                              ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     A     ┃  ALT/S    ┃ CTRL/D    ┃  SHFT/F   ┃     G     ┃   ┃     H     ┃  SHFT/J   ┃ CTRL/K    ┃  ALT/L    ┃     ;     ┃
+//             ┃     A     ┃     S     ┃     D     ┃     F     ┃     G     ┃   ┃     H     ┃     J     ┃     K     ┃     L     ┃     ;     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃   SHIFT   ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃    ESC    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -52,7 +45,7 @@ label= "BASE"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
-                &kp A       &mt LALT S  &mt LCTRL D &mt LSHFT F &kp G           &kp H       &mt RSHFT J &mt RCTRL K &mt RALT L  &kp SEMI
+                &kp A       &kp S       &kp D       &kp F       &kp G           &kp H       &kp J       &kp K       &kp L       &kp SEMI
                 &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp ESC
                                         &kp LEFT_ALT &mo 1       &kp SPACE       &kp RET   &mo 2         &kp LEFT_GUI
                         >;
@@ -92,20 +85,20 @@ label= "NUM"                               ;
 label= "FUNCTION"                          ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃    F1     ┃    F2     ┃    F3     ┃    F4     ┃    F5     ┃   ┃    F6     ┃    F7     ┃    F8     ┃    F9     ┃    F10    ┃
+//             ┃    F1     ┃    F2     ┃    F3     ┃    F4     ┃    F5     ┃   ┃    F6     ┃    F7     ┃    F8     ┃    F9     ┃   BSPC    ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃ SCRL UP   ┃ L-CLICK   ┃ MOVE UP   ┃ R-CLICK   ┃   HOME    ┃   ┃     -     ┃     =     ┃     [     ┃     ]     ┃ BACKSLASH┃
+//             ┃   CTRL    ┃ L-CLICK   ┃ MOVE UP   ┃ R-CLICK   ┃ SCRL UP   ┃   ┃     -     ┃     =     ┃     [     ┃     ]     ┃ BACKSLASH┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃ SCRL DOWN ┃ MOVE LEFT ┃ MOVE DOWN ┃ MOVE RIGHT┃   END     ┃   ┃    F5     ┃   F10     ┃   F11     ┃   F12     ┃     |     ┃     ~     ┃
+// ┃    TAB    ┃   SHIFT   ┃ MOVE LEFT ┃ MOVE DOWN ┃ MOVE RIGHT┃ SCRL DOWN┃   ┃    F5     ┃   F10     ┃   F11     ┃   F12     ┃     |     ┃     ~     ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃   TRANS   ┃   TRANS   ┃   ┃           ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp F1      &kp F2      &kp F3      &kp F4      &kp F5          &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
-                &msc SCRL_UP &mkp LCLK  &mmv MOVE_UP &mkp RCLK  &kp HOME        &kp MINUS   &kp EQUAL   &kp LBKT    &kp RBKT    &kp BSLH
-    &trans      &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp END   &kp F5      &kp F10     &kp F11     &kp F12     &kp PIPE    &kp TILDE
+                &kp F1      &kp F2      &kp F3      &kp F4      &kp F5          &kp F6      &kp F7      &kp F8      &kp F9      &kp BSPC
+                &kp LCTRL   &mkp LCLK  &mmv MOVE_UP &mkp RCLK  &msc SCRL_UP    &kp MINUS   &kp EQUAL   &kp LBKT    &kp RBKT    &kp BSLH
+    &kp TAB     &kp LSHFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &kp F5  &kp F10     &kp F11     &kp F12     &kp PIPE    &kp TILDE
                                         &trans      &trans      &trans          &trans      &kp C_PP    &trans      
                         >;
                 };
